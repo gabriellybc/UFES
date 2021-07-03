@@ -1,2 +1,2 @@
-# Projeto-de-Eletromag2
-Modelo para simulação de limitador de corrente de curto-circuito supercondutor resistivo.
+# Limitador de corrente em curto-circuito com supercondutor
+Modelo para simulação de limitador de corrente de curto-circuito com supercondutor resistivo em Python com interface gráfica. 
