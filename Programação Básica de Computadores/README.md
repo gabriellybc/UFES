@@ -1,2 +1,2 @@
 # Programação Básica de Computadores
-Calculado desenvolvida em C, para a disciplina de Programação Básica de Computadores, que realiza operações com matrizes, como escalonamento de matriz MxN, e com algarismos numéricos.
+Calculado desenvolvida em C que realiza operações com matrizes, como escalonamento de matriz MxN, e com algarismos numéricos.
