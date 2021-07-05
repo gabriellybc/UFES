@@ -57,6 +57,13 @@ int main()
 
   printf("\nMedia da turma: %0.2f\n", media_turma(n, turma));
 
+  for (int i = 0; i < n; i++)
+  {
+    free(turma[i]->nome);
+    free(turma[i]);
+  }
+  free(turma);
+
   return 0;
 }
 
