@@ -1,7 +1,0 @@
-gcc  main.c -g -o main
-valgrind --tool=memcheck --leak-check=yes ./main
-
-gcc -g main.c
-
-gcc main.c -o main
-./a
