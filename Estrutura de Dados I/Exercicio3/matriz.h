@@ -11,7 +11,7 @@ typedef struct matriz Matriz;
  * pre-condicao: nlinhas e ncolunas diferentes de 0
  * pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas
  */
-Matriz* inicializaMatriz (int nlinhas, int ncolunas);
+Matriz *inicializaMatriz(int nlinhas, int ncolunas);
 
 /*Modifica o elemento [linha][coluna] da matriz mat
  * inputs: a matriz, a linha, a coluna, e o novo elemento
@@ -19,7 +19,7 @@ Matriz* inicializaMatriz (int nlinhas, int ncolunas);
  * pre-condicao: matriz mat existe, linha e coluna são válidos na matriz
  * pos-condicao: elemento [linha][coluna] da matriz modificado
  */
-void modificaElemento (Matriz* mat, int linha, int coluna, int elem);
+void modificaElemento(Matriz *mat, int linha, int coluna, int elem);
 
 /*Retorna o elemento mat[linha][coluna]
  * inputs: a matriz, a linha e a coluna
@@ -27,7 +27,7 @@ void modificaElemento (Matriz* mat, int linha, int coluna, int elem);
  * pre-condicao: matriz mat existe, linha e coluna são válidos na matriz
  * pos-condicao: mat não é modificada
  */
-int recuperaElemento(Matriz* mat, int linha, int coluna);
+int recuperaElemento(Matriz *mat, int linha, int coluna);
 
 /*Retorna o número de colunas da matriz mat
  * inputs: a matriz
@@ -35,7 +35,7 @@ int recuperaElemento(Matriz* mat, int linha, int coluna);
  * pre-condicao: matriz mat existe
  * pos-condicao: mat não é modificada
  */
-int recuperaNColunas (Matriz* mat);
+int recuperaNColunas(Matriz *mat);
 
 /*Retorna o número de linhas da matriz mat
  * inputs: a matriz
@@ -43,7 +43,7 @@ int recuperaNColunas (Matriz* mat);
  * pre-condicao: matriz mat existe
  * pos-condicao: mat não é modificada
  */
-int recuperaNLinhas (Matriz* mat);
+int recuperaNLinhas(Matriz *mat);
 
 /*Retorna a matriz transposta de mat
  * inputs: a matriz
@@ -51,7 +51,7 @@ int recuperaNLinhas (Matriz* mat);
  * pre-condicao: matriz mat existe
  * pos-condicao: mat não é modificada e matriz transposta existe
  */
-Matriz* transposta (Matriz* mat);
+Matriz *transposta(Matriz *mat);
 
 /*Retorna a matriz multiplicacao entre mat1 e mat2
  * inputs: as matrizes mat1 e mat2
@@ -60,7 +60,7 @@ Matriz* transposta (Matriz* mat);
  * correponde ao numero de linhas de mat2
  * pos-condicao: mat1 e mat2 não são modificadas e a matriz multiplicacao existe
  */
-Matriz* multiplicacao (Matriz* mat1, Matriz* mat2);
+Matriz *multiplicacao(Matriz *mat1, Matriz *mat2);
 
 /*Imprime a matriz
  * inputs: matriz mat
@@ -68,8 +68,7 @@ Matriz* multiplicacao (Matriz* mat1, Matriz* mat2);
  * pre-condicao: matriz mat existe
  * pos-condicao: nenhuma
  */
-void imprimeMatriz(Matriz* mat);
-
+void imprimeMatriz(Matriz *mat);
 
 /*Libera memória alocada para a matriz
  * inputs: matriz mat
@@ -77,6 +76,6 @@ void imprimeMatriz(Matriz* mat);
  * pre-condicao: matriz mat existe
  * pos-condicao: toda a memória alocada para matriz foi liberada
  */
-void destroiMatriz(Matriz* mat);
+void destroiMatriz(Matriz *mat);
 
 #endif /*MATRIZ_H_*/
