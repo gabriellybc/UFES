@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MaxTam 5
+#define MaxTam 10
 
 typedef struct indicepilha IndicePilha;
 
@@ -57,7 +57,7 @@ Item *popPilha1(PilhaDupla *p)
 {
   if (!p || p->Pilha1.Topo == -1)
   {
-    printf("Pilha vazia!!!");
+    printf("\nPilha vazia!!!");
     return NULL;
   }
   Item *item = p->item[p->Pilha1.Topo];
@@ -70,7 +70,7 @@ Item *popPilha2(PilhaDupla *p)
 {
   if (!p || p->Pilha2.Topo == MaxTam)
   {
-    printf("Pilha vazia!!!");
+    printf("\nPilha vazia!!!");
     return NULL;
   }
   Item *item = p->item[p->Pilha2.Topo];
