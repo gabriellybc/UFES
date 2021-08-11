@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "stdio.h": "c",
-    "listadplmat.h": "c"
+    "listadplmat.h": "c",
+    "tadpilhasduplas.h": "c",
+    "stdlib.h": "c"
   }
 }
