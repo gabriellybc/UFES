@@ -74,7 +74,7 @@ Item *popPilha2(PilhaDupla *p)
     return NULL;
   }
   Item *item = p->item[p->Pilha2.Topo];
-  p->Pilha2.Topo--;
+  p->Pilha2.Topo++;
   return item;
 }
 
