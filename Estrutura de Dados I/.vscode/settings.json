@@ -3,6 +3,8 @@
     "stdio.h": "c",
     "listadplmat.h": "c",
     "tadpilhasduplas.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "listasentinela.h": "c",
+    "fila.h": "c"
   }
 }
