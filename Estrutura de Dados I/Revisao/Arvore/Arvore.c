@@ -10,7 +10,7 @@ struct arv
 };
 
 // Cria uma árvore vazia
-Arv *arv_criavazia(void)
+Arv *arv_criavazia()
 {
   return NULL;
 }
@@ -68,4 +68,49 @@ void arv_imprime(Arv *a)
     arv_imprime(a->dir);   //mostra sad
   }
   printf(">");
+}
+
+static int max2(int a, int b)
+{
+  return (a > b) ? a : b; // Se a for maior que b, então retorna a. Caso contrário, retorna b
+}
+
+int arv_altura(Arv *a)
+{
+  if (arv_vazia(a)) //Condição de parada: Se a árvore estiver vazia
+    return -1;      //Retorna -1
+  else              //Caso contrário (árvore não vazia)
+  {
+    return 1 + max2(arv_altura(a->esq), arv_altura(a->dir));
+  }
+}
+
+//retorna a quantidade de folhas de uma árvore binaria
+int folhas(Arv *a)
+{
+  int qnt_folhas;
+  if (arv_vazia(a)) //caso base
+    return 0;
+  else
+  {
+    qnt_folhas = folhas(a->esq) + folhas(a->dir);
+    qnt_folhas = (qnt_folhas == 0) ? 1 : qnt_folhas; //Se qnt_folhas for igual a zero, retorna 1. Caso contrário, retorna qnt_folhas
+    return qnt_folhas;
+  }
+}
+
+//retorna o número de ocorrencias de um dado caracter na árvore
+int ocorrencias(Arv *a, char c)
+{
+  if (arv_vazia(a)) //caso base
+    return 0;
+  return (a->info == c) + ocorrencias(a->esq, c) + ocorrencias(a->dir, c);
+}
+
+//retorna o campo informação de um dado nó
+char info(Arv *a)
+{
+  if (arv_vazia(a))
+    return '0';
+  return a->info;
 }
