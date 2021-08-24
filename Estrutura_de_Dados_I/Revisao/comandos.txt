@@ -1,0 +1,15 @@
+Valgrid  
+gcc  main.c -g -o main
+valgrind --tool=memcheck --leak-check=yes ./main
+
+Debug 
+gcc -g main.c
+
+Execuatar pelo terminal
+gcc main.c -o main
+./a
+
+Linkando
+gcc -c *.c
+gcc main.o frac.o -o progfrac
+./progfrac
