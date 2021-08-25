@@ -12,4 +12,4 @@ Para rodar: "make run".
 
 Para rodar com valgrind: "make valgrind".
 
-Para limpar: "make clean", o arquivo 'prog' será apagado.
+Para limpar: "make clear", o arquivo 'prog' será apagado.
