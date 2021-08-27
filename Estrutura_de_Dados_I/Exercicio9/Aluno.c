@@ -40,7 +40,7 @@ int retornaMat(Aluno *al)
 };
 
 /*Retorna nome do Aluno*/
-char *retornaNomeAlunoAluno(Aluno *al)
+char *retornaNomeAluno(Aluno *al)
 {
   return al->nome;
 };

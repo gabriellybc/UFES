@@ -10,17 +10,19 @@ int main()
   Aluno *al3 = inicializaAluno(789, "Aluno3", 8.4);
   Aluno *al4 = inicializaAluno(951, "Aluno4", 3.7);
 
-  Arv *d = arv_cria('al1', arv_criavazia(), arv_criavazia());
+  Arv *d = arv_cria(al1, arv_criavazia(), arv_criavazia());
 
-  Arv *b = arv_cria('al2', arv_criavazia(), arv_criavazia());
+  Arv *b = arv_cria(al2, arv_criavazia(), arv_criavazia());
 
-  Arv *c = arv_cria('al3', arv_criavazia(), d);
+  Arv *c = arv_cria(al3, arv_criavazia(), d);
 
-  Arv *a = arv_cria('al4', b, c);
+  Arv *a = arv_cria(al4, b, c);
 
   printf("Tem al3 nela? %d\n", arv_pertence(a, "Aluno3"));
 
   arv_imprime(a);
+
+  printf("\n\n");
 
   arv_imprime_graficamente(a);
 
