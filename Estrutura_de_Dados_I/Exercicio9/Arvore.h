@@ -45,7 +45,7 @@ int folhas(Arv *a);
 //retorna o número de ocorrencias de um dado nome de Aluno na árvore
 int ocorrencias(Arv *a, char *nome);
 
-//retorna o campo informação de um dado nó
-Aluno *info(Arv *a);
+//retorna o campo aluno de um dado nó
+Aluno *aluno(Arv *a);
 
 #endif /*Arvore_h*/
