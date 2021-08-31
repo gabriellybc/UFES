@@ -27,7 +27,7 @@ int main()
 
   printf("\nQuantidade de folhas: %d", folhas(arv));
 
-  printf("\nAltura da arvore: %d", arv_altura(arv));
+  printf("\nAltura da arvore: %d", altura(arv));
 
   printf("\nOcorrencias de Henrique: %d", ocorrencias(arv, "Henrique"));
 

@@ -34,7 +34,7 @@ bool arv_pertence(Arv *a, char *nome); // Recebe a raíz a e uma string nome que
 void arv_imprime(Arv *a); //rebe a raíz da árvore
 
 //Retorna a altura da árvore
-int arv_altura(Arv *a);
+int altura(Arv *a);
 
 //retorna a quantidade de folhas de uma árvore binaria
 int folhas(Arv *a);

@@ -79,12 +79,12 @@ static int max2(int a, int b)
   return (a > b) ? a : b; // Se a for maior que b, então retorna a. Caso contrário, retorna b
 }
 
-int arv_altura(Arv *a)
+int altura(Arv *a)
 {
   if (arv_vazia(a)) //Condição de parada: Se a árvore estiver vazia
     return -1;      //Retorna -1
   else              //Caso contrário (árvore não vazia)
-    return 1 + max2(arv_altura(a->esq), arv_altura(a->dir));
+    return 1 + max2(altura(a->esq), altura(a->dir));
 }
 
 //retorna a quantidade de folhas de uma árvore binaria
