@@ -3,257 +3,109 @@
 #include <string.h>
 #include "Arvore.h"
 
-#define ZERO 0
-#define UM 0
-#define DOIS 1
-#define TRES 2
-
-typedef struct cel Celula;
-
-struct cel
-{
-  Aluno *aluno;    //campo de Aluno, mas poderia ser qualquer coisa
-  struct cel *esq; // ponteiro para a esquerda
-  struct cel *dir; // ponteiro para a direita
-};
-
-//sentinela
 struct arv
 {
-  Celula *prim;  // ponteiro para o nó raiz da celula
-  int qnt_maior; // quantidade de elementos no nivel de hierarquia que tiver maior numero de elesmentos
+  Aluno *aluno;    //campo de Aluno, mas poderia ser qualquer coisa
+  struct arv *esq; // ponteiro para a esquerda
+  struct arv *dir; // ponteiro para a direita
 };
 
-//Cria uma árvore vazia
+// Cria uma árvore vazia
 Arv *arv_criavazia()
 {
-  Arv *arv = (Arv *)malloc(sizeof(Arv));
-  arv->prim = NULL;
-  arv->qnt_maior = 0;
-  return arv;
+  return NULL;
 }
 
-// Cria uma árvore com a informação do nó raiz al, e com subárvore esquerda e e subárvore direira d
-Arv *arv_cria(Aluno *al, Arv *e, Arv *d)
+// Cria uma árvore com o aluno do nó raiz al, //e com subárvore esquerda e e subárvore direira d
+Arv *arv_cria(Aluno *al, Arv *sae, Arv *sad)
+//Recebe a informação do nó, a subárvore da esquerda e direita
 {
-  Celula *cel = (Celula *)malloc(sizeof(Celula));
-  cel->aluno = al;
-  cel->esq = e->prim;
-  cel->dir = d->prim;
-
-  Arv *arv = (Arv *)malloc(sizeof(Arv));
-  arv->prim = cel;
-  arv->qnt_maior = ((e->qnt_maior + d->qnt_maior) > 1) ? (e->qnt_maior + d->qnt_maior) : 1;
-  return arv;
+  Arv *p = (Arv *)malloc(sizeof(Arv)); //malloc para criar o novo nó, p aponta para o novo nó
+  p->aluno = al;
+  p->esq = sae;
+  p->dir = sad;
+  return p;
 }
 
-static bool celula_vazia(Celula *cel);
-
-//retorna true se a árvore estiver vazia e false caso contrário
+//indica se uma árvore é ou não vazia
 bool arv_vazia(Arv *a)
 {
-  return a->prim == NULL;
+  return a == NULL; //Se a raiz for nula, então ela é vazia
 }
-
-static bool celula_vazia(Celula *cel)
-{
-  return cel == NULL;
-}
-
-static void celula_libera(Celula *cel);
 
 //libera o espaço de memória ocupado pela árvore a
 Arv *arv_libera(Arv *a)
 {
-  celula_libera(a->prim);
+  //Se a árvore não estiver vazia, entra aqui
+  if (!arv_vazia(a)) //Caso base: árvore estar vazia
+  {
+    //Chamando recursivamente para sae
+    arv_libera(a->esq); //libera sae
+    //Chamando recursivamente para sad
+    arv_libera(a->dir); //libera sad
+    free(a);            //libera raiz
+  }
   return NULL; //Se a árvore estiver vazia, retorna NULL
 }
 
-static void celula_libera(Celula *cel)
+//Verifica se o aluno está ou não na árvore
+bool arv_pertence(Arv *a, char *nome) //Usa 2 casos bases
 {
-  //Se não estiver vazia, entra aqui
-  if (!celula_vazia(cel)) //caso base, redução da recursão
+  if (arv_vazia(a)) //1) Se a arvore está vazia
+    return 0;       // árvore vazia: não encontrou
+  else              // Caso contrário
+  //2) Se a raiz já contém o aluno, ele já retorna 1. Se não for, chamada recursiva para esquerda
   {
-    celula_libera(cel->esq);  //chamada recursiva
-    celula_libera(cel->dir);  //chamada recursiva
-    destroiAluno(cel->aluno); //libera raiz
+    bool compara = (strcmp(retornaNomeAluno(a->aluno), nome) == 0) ? 1 : 0;
+    return compara || arv_pertence(a->esq, nome) || arv_pertence(a->dir, nome);
   }
 }
 
-static bool celula_pertence(Celula *cel, char *nome);
-
-//indica a ocorrência (1) ou não (0) do Aluno com o nome informador
-bool arv_pertence(Arv *a, char *nome)
-{
-  return celula_pertence(a->prim, nome);
-}
-
-static bool celula_pertence(Celula *cel, char *nome)
-{
-  if (celula_vazia(cel))
-    return 0;
-  return strcmp(retornaNomeAluno(cel->aluno), nome) || celula_pertence(cel->esq, nome) || celula_pertence(cel->dir, nome);
-}
-
-static void celula_imprime(Celula *cel);
-
-//imprime as informações dos nós da árvore
+//percorre recursivamente a árvore, visitando todos os nós e imprimindo sua informação
 void arv_imprime(Arv *a)
 {
-  celula_imprime(a->prim);
-}
-
-static void celula_imprime(Celula *cel)
-{
   printf("<");
-  if (!celula_vazia(cel))
+  if (!arv_vazia(a))
   {
-    printf("%s", retornaNomeAluno(cel->aluno));
-    celula_imprime(cel->esq);
-    celula_imprime(cel->dir);
+    printf("%s", retornaNomeAluno(a->aluno)); //mostra raiz
+    arv_imprime(a->esq);                      //mostra sae
+    arv_imprime(a->dir);                      //mostra sad
   }
   printf(">");
 }
 
-/*
-static void celula_imprime_graficamente(Celula *cel, int posicao, char *string);
-
-void arv_imprime_graficamente(Arv *a)
+static int max2(int a, int b)
 {
-  if (!arv_vazia(a))
-  {
-    char *local;
-    celula_imprime_graficamente(a->prim, a->qnt_maior / 2, local);
-  }
+  return (a > b) ? a : b; // Se a for maior que b, então retorna a. Caso contrário, retorna b
 }
 
-static void celula_imprime_graficamente(Celula *cel, int posicao, char *local)
+int arv_altura(Arv *a)
 {
-  int i;
-  if (!celula_vazia(cel))
-  {
-    local = (char *)malloc((posicao + strlen(retornaNomeAluno(cel->aluno)) + strlen(retornaNomeAluno(cel->esq->aluno)) + strlen(retornaNomeAluno(cel->dir->aluno)) + 7) * sizeof(char));
-  }
-
-  int i;
-  if (!celula_vazia(cel))
-  {
-    if (!celula_vazia(cel->esq))
-    {
-      if (!celula_vazia(cel->dir))
-      {
-        char *local = (char *)malloc((posicao + strlen(retornaNomeAluno(cel->aluno)) + strlen(retornaNomeAluno(cel->esq->aluno)) + strlen(retornaNomeAluno(cel->dir->aluno)) + 7) * sizeof(char));
-        strcpy(local, "\t");
-        i = 0;
-        while (i < posicao)
-        {
-          strcat(local, "\t");
-          i++;
-        }
-        strcat(local, retornaNomeAluno(cel->aluno));
-        strcat(local, "\n");
-        i = 0;
-        while (i < posicao - 2)
-        {
-          strcat(local, "\t");
-          i++;
-        }
-        strcat(local, retornaNomeAluno(cel->esq->aluno));
-        strcat(local, "\t");
-        strcat(local, "\t");
-        strcat(local, retornaNomeAluno(cel->dir->aluno));
-        strcat(local, "\n");
-        strcat(local, "\0");
-        printf("%s", local);
-        free(local);
-
-        if (!celula_vazia(cel->esq->esq))
-          celula_imprime_graficamente(cel->esq->esq, posicao - 2);
-        if (!celula_vazia(cel->esq->dir))
-          celula_imprime_graficamente(cel->esq->dir, posicao - 2);
-        if (!celula_vazia(cel->dir->esq))
-          celula_imprime_graficamente(cel->dir->esq, posicao + 3);
-        if (!celula_vazia(cel->dir->dir))
-          celula_imprime_graficamente(cel->dir->dir, posicao + 3);
-        return;
-      }
-      else
-      {
-        char *local = (char *)malloc((posicao + strlen(retornaNomeAluno(cel->aluno)) + strlen(retornaNomeAluno(cel->esq->aluno)) + 4) * sizeof(char));
-        strcpy(local, "\t");
-        for (int i = 0; i < posicao - 1; i++)
-          strcat(local, "\t");
-        strcat(local, retornaNomeAluno(cel->aluno));
-        strcat(local, "\n");
-        for (int i = 0; i < posicao - 3; i++)
-          strcat(local, "\t");
-        strcat(local, retornaNomeAluno(cel->esq->aluno));
-        strcat(local, "\n");
-        strcat(local, "\0");
-        printf("%s", local);
-        free(local);
-
-        if (!celula_vazia(cel->esq->esq))
-          celula_imprime_graficamente(cel->esq->esq, posicao - 2);
-        if (!celula_vazia(cel->esq->dir))
-          celula_imprime_graficamente(cel->esq->dir, posicao - 2);
-        return;
-      }
-    }
-    else if (!celula_vazia(cel->dir))
-    {
-      char *local = (char *)malloc((posicao + strlen(retornaNomeAluno(cel->aluno)) + strlen(retornaNomeAluno(cel->dir->aluno)) + 7) * sizeof(char));
-      strcpy(local, "\t");
-      for (int i = 0; i < posicao - 1; i++)
-        strcat(local, "\t");
-      strcat(local, retornaNomeAluno(cel->aluno));
-      strcat(local, "\n");
-      for (int i = 0; i < posicao - 3; i++)
-        strcat(local, "\t");
-      strcat(local, "\t");
-      strcat(local, "\t");
-      strcat(local, "\t");
-      strcat(local, retornaNomeAluno(cel->dir->aluno));
-      strcat(local, "\n");
-      strcat(local, "\0");
-      printf("%s", local);
-      free(local);
-
-      if (!celula_vazia(cel->dir->esq))
-        celula_imprime_graficamente(cel->dir->esq, posicao + 3);
-      if (!celula_vazia(cel->dir->dir))
-        celula_imprime_graficamente(cel->dir->dir, posicao + 3);
-      return;
-    }
-
-    else
-    {
-      char *local = (char *)malloc((posicao + strlen(retornaNomeAluno(cel->aluno)) + 5) * sizeof(char));
-      strcpy(local, "\t");
-      i = 0;
-      while (i < posicao)
-      {
-        strcat(local, "\t");
-        i++;
-      }
-      strcat(local, retornaNomeAluno(cel->aluno));
-      strcat(local, "\n");
-      printf("%s", local);
-      free(local);
-      return;
-    }
-  }
+  if (arv_vazia(a)) //Condição de parada: Se a árvore estiver vazia
+    return -1;      //Retorna -1
+  else              //Caso contrário (árvore não vazia)
+    return 1 + max2(arv_altura(a->esq), arv_altura(a->dir));
 }
-*/
-
-//Retorna a altura da árvore
-int arv_altura(Arv *a);
 
 //retorna a quantidade de folhas de uma árvore binaria
-int folhas(Arv *a);
+int folhas(Arv *a)
+{
+  int qnt_folhas;
+  if (arv_vazia(a)) //caso base
+    return 0;
+  else
+  {
+    qnt_folhas = folhas(a->esq) + folhas(a->dir);
+    qnt_folhas = (qnt_folhas == 0) ? 1 : qnt_folhas; //Se qnt_folhas for igual a zero, retorna 1. Caso contrário, retorna qnt_folhas
+    return qnt_folhas;
+  }
+}
 
-//retorna o número de ocorrencias de um dado nome de Aluno na árvore
-int ocorrencias(Arv *a, char *nome);
-
-//retorna o campo aluno de um dado nó
-Aluno *aluno(Arv *a);
+//retorna o número de ocorrencias de um dado aluno na árvore
+int ocorrencias(Arv *a, char *nome)
+{
+  if (arv_vazia(a)) //caso base
+    return 0;
+  bool compara = (strcmp(retornaNomeAluno(a->aluno), nome) == 0) ? 1 : 0;
+  return compara + ocorrencias(a->esq, nome) + ocorrencias(a->dir, nome);
+}

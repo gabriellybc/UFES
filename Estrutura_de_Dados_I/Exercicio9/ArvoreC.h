@@ -8,7 +8,7 @@
 
 #ifndef ArvoreC_h
 #define ArvoreC_h
-
+/*
 #include <stdbool.h>
 
 typedef struct arv Arv;
@@ -41,5 +41,9 @@ int folhas(Arv *a);
 
 //retorna o número de ocorrencias de um dado nome de Aluno na árvore
 int ocorrencias(Arv *a, char *nome);
+
+//imprime as informações dos nós da árvore
+//void arv_imprime_graficamente(Arv *a);
+*/
 
 #endif /*Arvore_h*/

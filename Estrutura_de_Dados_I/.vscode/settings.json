@@ -5,6 +5,8 @@
     "tadpilhasduplas.h": "c",
     "stdlib.h": "c",
     "listasentinela.h": "c",
-    "fila.h": "c"
+    "fila.h": "c",
+    "arvorec.h": "c",
+    "arvore.h": "c"
   }
 }

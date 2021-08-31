@@ -5,25 +5,41 @@
 int main()
 {
   // Criando alunos
-  Aluno *al1 = inicializaAluno(123, "Aluno1", 5.3);
-  Aluno *al2 = inicializaAluno(456, "Aluno2", 7.8);
-  Aluno *al3 = inicializaAluno(789, "Aluno3", 8.4);
-  Aluno *al4 = inicializaAluno(951, "Aluno4", 3.7);
-  Aluno *al5 = inicializaAluno(951, "Aluno5", 3.7);
+  Aluno *gab = inicializaAluno(123, "Gabi", 5.3);
+  Aluno *hen = inicializaAluno(456, "Henrique", 7.8);
+  Aluno *isa = inicializaAluno(789, "Isa", 8.4);
+  Aluno *con = inicializaAluno(951, "Jose", 3.7);
+  Aluno *neu = inicializaAluno(357, "Neuzi", 8.8);
 
-  Arv *d = arv_cria(al1, arv_criavazia(), arv_criavazia());
-  Arv *b = arv_cria(al2, arv_criavazia(), arv_criavazia());
-  Arv *e = arv_cria(al5, arv_criavazia(), arv_criavazia());
-  Arv *c = arv_cria(al3, e, d);
-  Arv *a = arv_cria(al4, b, c);
+  Arv *a1 = arv_cria(hen, arv_criavazia(), arv_criavazia());
+  Arv *a2 = arv_cria(isa, arv_criavazia(), arv_criavazia());
+  Arv *a3 = arv_cria(hen, arv_criavazia(), a2);
+  Arv *a4 = arv_cria(neu, arv_criavazia(), arv_criavazia());
+  Arv *a5 = arv_cria(gab, a1, arv_criavazia());
+  Arv *a6 = arv_cria(con, a4, a5);
+  Arv *arv = arv_cria(gab, a3, a6);
 
-  printf("Tem al3 nela? %d\n", arv_pertence(a, "Aluno3"));
+  arv_imprime(arv);
 
-  arv_imprime(a);
+  printf("\nAluno chamado Henrique pertence a arvore? %d", arv_pertence(arv, "Henrique"));
 
-  printf("\n\n");
+  printf("\nAluna chamado Gabi pertence a arvore? %d", arv_pertence(arv, "Gabi"));
 
-  arv_imprime_graficamente(a);
+  printf("\nQuantidade de folhas: %d", folhas(arv));
+
+  printf("\nAltura da arvore: %d", arv_altura(arv));
+
+  printf("\nOcorrencias de Henrique: %d", ocorrencias(arv, "Henrique"));
+
+  printf("\nOcorrencias de Gabi: %d\n", ocorrencias(arv, "Gabi"));
+
+  arv_libera(arv);
+
+  destroiAluno(gab);
+  destroiAluno(hen);
+  destroiAluno(isa);
+  destroiAluno(neu);
+  destroiAluno(con);
 
   return 0;
 }
