@@ -6,8 +6,8 @@
 // Implementação de uma árvore binária. Ou ela está vazia, ou um nó raiz com duas subárvores
 //
 
-#ifndef ArvoreC_h
-#define ArvoreC_h
+#ifndef Arvore_h
+#define Arvore_h
 
 #include <stdbool.h>
 

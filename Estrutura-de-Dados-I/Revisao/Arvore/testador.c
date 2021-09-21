@@ -22,5 +22,7 @@ int main()
 
   printf("\nInfo: %c\n", info(a));
 
+  printf("\nAltura: %d\n", arv_altura(a));
+
   return 0;
 }
