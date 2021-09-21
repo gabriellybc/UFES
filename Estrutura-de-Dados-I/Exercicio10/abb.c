@@ -17,7 +17,7 @@ Arv *abb_cria()
 }
 
 //indica se uma árvore é ou não vazia
-bool arv_vazia(Arv *a)
+bool abb_vazia(Arv *a)
 {
   return a == NULL; //Se a raiz for nula, então ela é vazia
 }
@@ -25,7 +25,7 @@ bool arv_vazia(Arv *a)
 //percorre recursivamente a árvore, visitando todos os nós e imprimindo sua informação
 void abb_imprime(Arv *a)
 {
-  if (!arv_vazia(a))
+  if (!abb_vazia(a))
   {
     abb_imprime(a->esq);   //mostra sae
     imprimeAluno(a->info); //mostra raiz
@@ -37,7 +37,7 @@ void abb_imprime(Arv *a)
 // Se não encontrar, retorna NULL
 Arv *abb_busca(Arv *r, int chave)
 {
-  if (arv_vazia(r))
+  if (abb_vazia(r))
     return NULL;
   else if (retornaMat(r->info) > chave)
     return abb_busca(r->esq, chave);
@@ -50,7 +50,7 @@ Arv *abb_busca(Arv *r, int chave)
 // Insere sempre como folha da arvore
 Arv *abb_insere(Arv *a, Aluno *al)
 {
-  if (arv_vazia(a))
+  if (abb_vazia(a))
   {
     a = (Arv *)malloc(sizeof(Arv));
     a->info = al;
@@ -66,7 +66,7 @@ Arv *abb_insere(Arv *a, Aluno *al)
 
 Arv *abb_retira(Arv *r, int v)
 {
-  if (arv_vazia(r))
+  if (abb_vazia(r))
     return NULL;
   else if (retornaMat(r->info) > v)
     r->esq = abb_retira(r->esq, v);
@@ -114,15 +114,15 @@ Arv *abb_retira(Arv *r, int v)
 }
 
 //libera o espaço de memória ocupado pela árvore a
-Arv *arv_libera(Arv *a)
+Arv *abb_libera(Arv *a)
 {
   //Se a árvore não estiver vazia, entra aqui
-  if (!arv_vazia(a)) //Caso base: árvore estar vazia
+  if (!abb_vazia(a)) //Caso base: árvore estar vazia
   {
     //Chamando recursivamente para sae
-    arv_libera(a->esq); //libera sae
+    abb_libera(a->esq); //libera sae
     //Chamando recursivamente para sad
-    arv_libera(a->dir); //libera sad
+    abb_libera(a->dir); //libera sad
     free(a);            //libera raiz
   }
   return NULL; //Se a árvore estiver vazia, retorna NULL

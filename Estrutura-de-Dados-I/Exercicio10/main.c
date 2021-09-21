@@ -11,24 +11,26 @@ int main()
   Aluno *con = inicializaAluno(951, "Jose", 3.7);
   Aluno *neu = inicializaAluno(357, "Neuzi", 8.8);
 
-  Arv *a = arv_cria();
-  abb_insere(a, gab);
-  abb_insere(a, isa);
-  abb_insere(a, hen);
-  abb_insere(a, con);
-  abb_insere(a, neu);
+  Arv *a = abb_cria();
+  a = abb_insere(a, gab);
+  a = abb_insere(a, isa);
+  a = abb_insere(a, hen);
+  a = abb_insere(a, con);
+  a = abb_insere(a, neu);
 
-  arv_imprime(a);
+  abb_imprime(a);
 
   printf("\nAluno com matricula 951 pertence a arvore? %d", ((abb_busca(a, 123) != NULL) ? 1 : 0));
 
-  printf("\nAluno com matricula 75319 pertence a arvore? %d", ((abb_busca(a, 123) != NULL) ? 1 : 0));
+  printf("\nAluno com matricula 75319 pertence a arvore? %d\n", ((abb_busca(a, 123) != NULL) ? 1 : 0));
 
-  abb_retira(a, 123);
-  abb_retira(a, 951);
-  abb_retira(a, 456);
+  a = abb_retira(a, 123);
+  a = abb_retira(a, 951);
+  a = abb_retira(a, 456);
 
-  arv_libera(a);
+  abb_imprime(a);
+
+  abb_libera(a);
 
   destroiAluno(gab);
   destroiAluno(hen);

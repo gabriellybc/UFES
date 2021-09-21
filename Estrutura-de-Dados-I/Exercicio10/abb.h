@@ -16,13 +16,13 @@ typedef struct arv Arv;
 #include "Aluno.h"
 
 //Cria uma árvore vazia
-Arv *arv_cria();
+Arv *abb_cria();
 
 //retorna true se a árvore estiver vazia e false caso contrário
-bool arv_vazia(Arv *a); //rebe a raíz da árvore
+bool abb_vazia(Arv *a); //rebe a raíz da árvore
 
 //imprime as informações dos nós da árvore
-void arv_imprime(Arv *a); //rebe a raíz da árvore
+void abb_imprime(Arv *a); //rebe a raíz da árvore
 
 // Se encontrar, retorna o nó que contém o aluno
 // Se não encontrar, retorna NULL
@@ -34,6 +34,6 @@ Arv *abb_insere(Arv *a, Aluno *al);
 Arv *abb_retira(Arv *r, int v);
 
 //libera o espaço de memória ocupado pela árvore a
-Arv *arv_libera(Arv *a); //rebe a raíz da árvore
+Arv *abb_libera(Arv *a); //rebe a raíz da árvore
 
 #endif /*abb_h*/
