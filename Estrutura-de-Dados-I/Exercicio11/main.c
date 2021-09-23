@@ -60,5 +60,8 @@ int main(int argc, char const *argv[])
 
   //Liberando espaço alocado
   liberaHash(tab);
+
+  fclose(fp);
+
   return 0;
 }

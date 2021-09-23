@@ -42,7 +42,7 @@ Palavra *buscaPalavra(Palavra *pal, char *string)
   //busca na lista de colisao
   for (p = pal; p != NULL; p = p->prox)
   {
-    if (strcmp(string, pal->string) == 0)
+    if (strcmp(string, p->string) == 0)
       return p;
   }
   return NULL;

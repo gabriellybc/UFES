@@ -35,7 +35,7 @@ Hash *inicHash(int tamanhoHash)
 
 //Faz acesso a hash realizando 2 possíveis operações:
 //1) insercao, caso a palavra nao esteja na hash
-//2) incremento de ocorrenciia, caso a palavra ja esteja na hash
+//2) incremento de ocorrencia, caso a palavra ja esteja na hash
 Palavra *acessa(Hash *h, char *string)
 {
   Palavra *p;
