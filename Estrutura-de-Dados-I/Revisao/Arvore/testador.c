@@ -24,5 +24,7 @@ int main()
 
   printf("\nAltura: %d\n", arv_altura(a));
 
+  printf("\nNos maximos: %d\n", arvNos(a));
+
   return 0;
 }

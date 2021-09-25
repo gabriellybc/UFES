@@ -85,18 +85,24 @@ int arv_altura(Arv *a)
   }
 }
 
+//Retorna o numero total de nos de uma arvore cheia
+int arvNos(Arv *a)
+{
+  int nos = 1, altura = arv_altura(a);
+  for (int i = 0; i < altura + 1; i++)
+    nos *= 2; // nos = nos * 2
+  return nos - 1;
+}
+
 //retorna a quantidade de folhas de uma árvore binaria
 int folhas(Arv *a)
 {
   int qnt_folhas;
   if (arv_vazia(a)) //caso base
     return 0;
-  else
-  {
-    qnt_folhas = folhas(a->esq) + folhas(a->dir);
-    qnt_folhas = (qnt_folhas == 0) ? 1 : qnt_folhas; //Se qnt_folhas for igual a zero, retorna 1. Caso contrário, retorna qnt_folhas
-    return qnt_folhas;
-  }
+  qnt_folhas = folhas(a->esq) + folhas(a->dir);
+  qnt_folhas = (qnt_folhas == 0) ? 1 : qnt_folhas; //Se qnt_folhas for igual a zero, retorna 1. Caso contrário, retorna qnt_folhas
+  return qnt_folhas;
 }
 
 //retorna o número de ocorrencias de um dado caracter na árvore

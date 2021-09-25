@@ -29,6 +29,8 @@ int arv_altura(Arv *a);
 //retorna o pai de um dado nó
 Arv *arv_pai(Arv *a, char c);
 
+int arvNos(Arv *a);
+
 //retorna a quantidade de folhas de uma árvore binaria
 int folhas(Arv *a);
 
