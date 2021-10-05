@@ -6,10 +6,10 @@ Para isso, foram utilizados conceitos como Tipos Abstratos de Dados (TADs), List
 
 # Makefile
 
-Para compilar: "make compile", será gerado um arquivo 'prog'.
+Para compilar: "make all", será gerado um arquivo 'prog'.
 
 Para rodar: "make run".
 
 Para rodar com valgrind: "make valgrind".
 
-Para limpar: "make clear", o arquivo 'prog' será apagado.
+Para limpar: "make clean", o arquivo 'prog' será apagado.
