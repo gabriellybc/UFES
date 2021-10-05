@@ -1,4 +1,13 @@
-Joao;3;acoustic-hits.txt;nacional.txt;heavymetal.txt
-Maria;2;sertanejo.txt;metal.txt
-Pedro;1;eletronica.txt
-Alice;2;sert.txt;eletrica.txt
+Joao;1;glee-galore.txt
+Otavio;6;eletro-oq.txt;noite-em-ny.txt;anos-2010.txt;pet-pra-quem.txt;pet-comunal.txt;pop-2008-2011.txt
+Patricia;5;jazz.txt;jazz-brunch.txt;glee-galore.txt;noite-em-ny.txt;2008-2011.txt
+Henrique;5;anos-2010.txt;pop-2008-2011.txt;glee-galore.txt;jazz.txt;eletrohits-2008-2011.txt
+Paulo;2;macdemarco.txt;2008-2011.txt
+Jose;5;petianos.txt;skate3.txt;pet-pra-quem.txt;this-is-glee.txt;jazz.txt
+Amanda;5;eletrohits-2008-2011.txt;pop-2008-2011.txt;2008-2011.txt;glee-galore.txt;jazz-brunch.txt
+Pedro;3;macdemarco.txt;eletro-oq.txt;glee-galore.txt
+Antonio;1;macdemarco.txt
+Luiz;5;2008-2011.txt;jazz.txt;eletro-oq.txt;this-is-glee.txt;jazz-brunch.txt
+Renata;3;jazz.txt;anos-2010.txt;glee-galore.txt
+Felipe;5;this-is-glee.txt;eletrohits-2008-2011.txt;jazz.txt;skate3.txt;glee-galore.txt
+Rebeca;5;eletro-oq.txt;eletrohits-2008-2011.txt;petianos.txt;this-is-glee.txt;anos-2010.txt

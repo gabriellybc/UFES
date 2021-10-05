@@ -54,7 +54,7 @@ void inserePessoa(ListaPessoa *lista, Pessoa *people)
 void lePessoas(ListaPessoa *lista)
 {
   Pessoa *pessoa;
-  char *nome, nomePessoa[50], linha[200];
+  char *nome, nomePessoa[500], linha[2000];
   int i = 0, j = 0;
   FILE *arqAmizade;
   arqAmizade = fopen("amizade.txt", "r");
@@ -65,7 +65,7 @@ void lePessoas(ListaPessoa *lista)
   }
   else
   {
-    fgets(linha, 200, arqAmizade); // o 'fgets' lê até 199 caracteres ou até o '\n'
+    fgets(linha, 2000, arqAmizade); // o 'fgets' lê até 1999 caracteres ou até o '\n'
     while (1)
     {
       if (linha[i] == ';')
@@ -287,7 +287,7 @@ void Similaridades(ListaPessoa *lista)
       {
         fprintf(arqSimilaridades, "%s;%s;%d\n", ppe1, ppe2, numSimilar);
       }
-    
+
       free(ppe1);
       free(ppe2);
     }

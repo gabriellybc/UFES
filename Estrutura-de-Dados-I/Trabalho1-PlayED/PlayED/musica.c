@@ -48,8 +48,8 @@ void defineMusica(Musica *musica, char *leitura)
   }
 
   int i = 0, j = 0;
-  char nomeMusica[121];
-  char nomeCantor[121];
+  char nomeMusica[1210];
+  char nomeCantor[1210];
   while (leitura[i] != '-')
   {
     nomeCantor[i] = leitura[i]; // Atribui todos os caracteres até o '-' ao nomeCantor

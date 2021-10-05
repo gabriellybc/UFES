@@ -1,10 +1,10 @@
 ### MAKEFILE ###
 
-clear:
-				rm ./prog
-
-compile:
+all:
 				gcc *.c -o prog
+
+clean:
+				rm ./prog
 
 run:
 				./prog

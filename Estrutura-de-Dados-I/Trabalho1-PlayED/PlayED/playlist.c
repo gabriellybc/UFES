@@ -51,14 +51,14 @@ void defineListaMusica(Playlist *playlist, ListaMusica *todasMusicas)
     printf("** ERRO: O arquivo não foi aberto **");
     exit;
   }
-  char linha[100];
+  char linha[1000];
   Musica *musica;
   while (1)
   {
     //A função feof retona um valor inteiro diferente de zero se o indicador de fim de arquivo está marcado para linha
     if (feof(arqPlaylist))
       break;
-    fgets(linha, 100, arqPlaylist); // o 'fgets' lê até 99 caracteres ou até o '\n'
+    fgets(linha, 1000, arqPlaylist); // o 'fgets' lê até 9999 caracteres ou até o '\n'
     musica = inicializaMusica();
     defineMusica(musica, linha);
     insereMusica(lista, musica);
