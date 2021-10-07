@@ -1,0 +1,10 @@
+*.exe
+*.out
+*.o
+*.comp
+compactador
+descompactador
+Compacta
+Descompacta
+.vscode
+*.jpeg
