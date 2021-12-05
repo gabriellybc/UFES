@@ -31,7 +31,7 @@ Arv *arvCriaVazia();
  * pre-condicao: nenhuma
  * pos-condicao: estrutura arvore de retorno inicializada existe, memória alocada. Arvore tem os campos info, peso, temCaracter, arv esq e dir definidos
  */
-Arv *arvCria(char c, int qnt, bool tem, Arv *e, Arv *d);
+Arv *arvCria(unsigned char c, int qnt, bool tem, Arv *e, Arv *d);
 
 /*Indica se uma árvore e' ou nao vazia
  * inputs: ponteiro para a arvore
@@ -55,7 +55,7 @@ int retornaPeso(Arv *a);
  * pre-condicao: arvore existe está alocada e válida
  * pos-condicao: arvore não é modificada
  */
-char retornaInfo(Arv *a);
+unsigned char retornaInfo(Arv *a);
 
 /*Retorna o campo temCaracter da arvore
  * inputs: ponteiro para a arvore
@@ -135,7 +135,7 @@ Arv *redefineArvore(Arv *a, bitmap *bm, int totalFolhas, int *folhasAtuais, bool
  * pre-condicao: todos os inputs existem estão alocados e validos
  * pos-condicao: a função navega pela arvore de acordo com os valores do bitmap até encontar um nó folha, e retorna o caracter associado
  */
-char retornaCaracter(bitmap *bm, Arv *a, int *indice);
+unsigned char retornaCaracter(bitmap *bm, Arv *a, int *indice);
 
 /*Libera memória alocada para a arvore
  * inputs: ponteiro para a arvore

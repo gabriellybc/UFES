@@ -188,7 +188,7 @@ void imprimeListaCodificacao(ListaCodificacao *lista)
 }
 
 //Funcao de retorno para a busca da codificacao com determinado caracter
-static Celula *busca(Celula *primeira, char caracter)
+static Celula *busca(Celula *primeira, unsigned char caracter)
 {
   Celula *p = primeira;
   //faz a busacao
@@ -198,7 +198,7 @@ static Celula *busca(Celula *primeira, char caracter)
 }
 
 // Retorna a codificacao de determinado nome da lista de codificacaos
-Codificacao *retornaCodificacao(ListaCodificacao *lista, char caracter)
+Codificacao *retornaCodificacao(ListaCodificacao *lista, unsigned char caracter)
 {
   Celula *p = busca(lista->Prim, caracter);
 
@@ -260,7 +260,11 @@ void imprimeCodificacaoBinario(ListaCodificacao *lista, char *nomeArquivo, char 
     //faz a leitura do caracter no arquivo apontado por arqLeitura ate o final do arquivo
     while (fread(&c, sizeof(char), 1, arqLeitura) != 0)
     {
-      bmCaracter = retornaBitmapCodificacao(retornaCodificacao(lista, c));
+      Codificacao *cod = retornaCodificacao(lista, c);
+      if (cod)
+        bmCaracter = retornaBitmapCodificacao(retornaCodificacao(lista, c));
+      else
+        printf("aqui\n");
       //obtem bitmap do caracter
       for (index = 0; index < bitmapGetLength(bmCaracter); index++)
         bitmapAppendLeastSignificantBit(bmArquivo, bitmapGetBit((bmCaracter), index));

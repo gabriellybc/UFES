@@ -22,7 +22,7 @@ typedef struct cod Codificacao;
  * pre-condicao: nenhuma
  * pos-condicao: estrutura codificacao de retorno inicializada existe, memória alocada
  */
-Codificacao *inicCodificacao(char caracter, bitmap *bm);
+Codificacao *inicCodificacao(unsigned char caracter, bitmap *bm);
 
 /*Retorna o caracter (caracter) da codificacao
  * inputs: ponteiro para a codificacao
@@ -30,7 +30,7 @@ Codificacao *inicCodificacao(char caracter, bitmap *bm);
  * pre-condicao: codificacao existe está alocada e válida
  * pos-condicao: codificacao não é modificada
  */
-char retornaCaracterCodificacao(Codificacao *codificacao);
+unsigned char retornaCaracterCodificacao(Codificacao *codificacao);
 
 /*Retorna o bitmap da codificacao
  * inputs: ponteiro para a codificacao

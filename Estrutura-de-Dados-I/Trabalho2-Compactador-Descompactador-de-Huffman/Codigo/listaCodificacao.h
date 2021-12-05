@@ -47,7 +47,7 @@ void imprimeListaCodificacao(ListaCodificacao *lista);
  * pre-condicao: lista e chave existem estão alocadas e válidas
  * pos-condicao: lista não é modificada
  */
-Codificacao *retornaCodificacao(ListaCodificacao *lista, char caracter);
+Codificacao *retornaCodificacao(ListaCodificacao *lista, unsigned char caracter);
 
 /*Define toda a tabela de Codificacoes do arquivo
  * inputs: ponteiros para a lista de codificacoes e para a lista de arvores

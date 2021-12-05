@@ -11,3 +11,4 @@ clean:
 rmproper: clean
 				rm -rf ./Compacta
 				rm -rf ./Descompacta
+				rm -rf ./*.comp

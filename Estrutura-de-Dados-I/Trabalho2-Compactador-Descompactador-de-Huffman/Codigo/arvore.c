@@ -7,7 +7,7 @@
 //Tipo arv (tipo opaco)
 struct arv
 {
-  char info; //campo de char
+  unsigned char info; //campo de char
   int peso;
   bool temCaracter;
   struct arv *esq; // ponteiro para a esquerda
@@ -21,7 +21,7 @@ Arv *arvCriaVazia()
 }
 
 //Cria uma arvore com todos os campos definidos
-Arv *arvCria(char c, int qnt, bool tem, Arv *sae, Arv *sad)
+Arv *arvCria(unsigned char c, int qnt, bool tem, Arv *sae, Arv *sad)
 {
   Arv *p = (Arv *)malloc(sizeof(Arv)); //malloc para criar o novo no, p aponta para o novo no
   p->info = c;
@@ -47,7 +47,7 @@ int retornaPeso(Arv *a)
 }
 
 //Retorna o campo info da arvore
-char retornaInfo(Arv *a)
+unsigned char retornaInfo(Arv *a)
 {
   if (arvVazia(a))
     return '\0';
@@ -169,7 +169,7 @@ Arv *redefineArvore(Arv *a, bitmap *bm, int totalFolhas, int *folhasAtuais, bool
       (*i)++;
       bitmapAppendLeastSignificantBit(bin, bitmapGetBit(bm, *i));
     }
-    char caracter = bin2dec(bin);
+    unsigned char caracter = bin2dec(bin);
     bitmapLibera(bin);
     a->info = caracter;
     a->temCaracter = 1;
@@ -195,7 +195,7 @@ Arv *redefineArvore(Arv *a, bitmap *bm, int totalFolhas, int *folhasAtuais, bool
 }
 
 //Retorna o caracter passado por um bitmap
-char retornaCaracter(bitmap *bm, Arv *a, int *indice)
+unsigned char retornaCaracter(bitmap *bm, Arv *a, int *indice)
 {
   unsigned int bit = bitmapGetBit(bm, *indice);
   //faz a função recursivamente de acordo com o bitmap, até encontar um nó folha(com caracter)

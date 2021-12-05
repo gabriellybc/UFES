@@ -5,12 +5,12 @@
 //Tipo codifucacao (tipo opaco)
 struct cod
 {
-  char caracter;
+  unsigned char caracter;
   bitmap *bm;
 };
 
 //Inicializa a estrutura Codificacao
-Codificacao *inicCodificacao(char caracter, bitmap *bm)
+Codificacao *inicCodificacao(unsigned char caracter, bitmap *bm)
 {
   Codificacao *cod = (Codificacao *)malloc(sizeof(Codificacao));
   if (!cod)
@@ -24,7 +24,7 @@ Codificacao *inicCodificacao(char caracter, bitmap *bm)
 }
 
 //Retorna o caracter (caracter) da codificacao
-char retornaCaracterCodificacao(Codificacao *codificacao)
+unsigned char retornaCaracterCodificacao(Codificacao *codificacao)
 {
   return codificacao->caracter;
 }
