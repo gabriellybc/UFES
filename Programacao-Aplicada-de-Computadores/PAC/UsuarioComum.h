@@ -3,22 +3,24 @@
 #include "Usuario.h"
 #include "Pagina.h"
 
-class UsuarioComum: public Usuario
+class UsuarioComum : public Usuario
 {
 public:
     enum StatusRelacionamento
     {
-        Solteiro=1,
-        Namorando=2,
-        Casado=3
+        Solteiro = 1,
+        Namorando = 2,
+        Casado = 3
     };
+
 private:
     char genero;
-    string formacao,urlFoto;
+    string formacao, urlFoto;
     StatusRelacionamento status;
+
 public:
     UsuarioComum();
-    UsuarioComum(string nome, string id, tm data,string urlFoto, char genero, string formacao, StatusRelacionamento status );
+    UsuarioComum(string nome, string id, tm data, string urlFoto, char genero, string formacao, StatusRelacionamento status);
     void setGenero(char genero);
     char getGenero();
     void setFormacao(string formacao);
