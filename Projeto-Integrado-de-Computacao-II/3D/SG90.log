@@ -1,0 +1,42 @@
+Conversão de STEP para o Solid Edge
+Data: quinta-feira,maio 04,2023 03:17
+Arquivo de Origem: C:\Users\mayke\OneDrive\Área de Trabalho\3D\SG90.step
+Autor: Desconhecido
+Organização: Desconhecido
+Sistema de origem: Autodesk Translation Framework v12.4.0.73
+
+Hardware:
+Processador: Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz
+Sistema operacional: Windows 10
+Memória instalada: 15.88 GB
+
+Informações do software
+Versão do Parasolid: 34.0.153
+Versão do PSBodyShop: 34.0.110
+Versão do Adaptador de Passo: 9.0.92
+Versão do Solid Edge: 222.00.00.132 x64
+
+Opções de importação do STEP
+Importar Corpos Facetados: Ativo
+Importar Corpos de Verificação: Desativado
+Importar Curvas: Ativo
+Importar NãoSalvar: Ativo
+Importar Várias Corpos como um Único Arquivo de Peça: Ativo
+Importar Superfícies de Costura: Ativo
+Importar Sólidos Booleanos: Ativo
+Tornar recurso básico: Ativo
+Simplificar geometria: Ativo
+Importar Curvas de Impressão: Ativo
+Importar Unidade: C:
+Importar Superfícies de Costura: Ativo
+Importar Superfícies: Ativo
+Importar Caminho de Saída: C:\Users\mayke\OneDrive\Área de Trabalho\3D
+Importar Habilitar Caminho de Saída Padrão: Ativo
+Importar PMI: Desativado
+Importar Como Componentes Internos: Desativado
+Importar Caminho: 
+
+Convertendo para tipos de dado do Parasolid...
+Inserindo C:\Users\mayke\OneDrive\Área de Trabalho\3D\SG90_0.par
+Processo de conversão completo
+Tempo total necessário para converter e processar posteriormente:00 : 00 : 08

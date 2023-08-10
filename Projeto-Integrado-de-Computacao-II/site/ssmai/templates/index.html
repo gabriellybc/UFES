@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSMAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #0088cc;
+        }
+        
+        p {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #005580;
+        }
+        
+        .back-button {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            background-color: #cccccc;
+            color: #333333;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background-color: #999999;
+        }
+
+        /* Modo Noturno */
+        body.dark-mode {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        body.dark-mode .container {
+            background-color: #222222;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode h1 {
+            color: #00aaff;
+        }
+
+        body.dark-mode p {
+            color: #cccccc;
+        }
+
+        body.dark-mode .btn {
+            background-color: #00aaff;
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn:hover {
+            background-color: #0088cc;
+        }
+
+        body.dark-mode .back-button {
+            background-color: #555555;
+            color: #cccccc;
+        }
+
+        body.dark-mode .back-button:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <h1>SSMAI</h1>
+        {% if user.is_anonymous %}
+            <a class="btn btn-primary" href="/ssmai/login/" target="_blank">Login</a>
+        {% else %}
+            <div class="alert alert-primary" role="alert">
+                Seja bem-vindo(a) {{ user.get_full_name }}!
+                <br>
+                <br>
+            </div>
+            {% if user.first_access %}
+                <a class="btn btn-primary" href="/telegram">Cadastrar Telegram</a>
+            {% else %}
+                <a class="btn btn-primary" href="/ssmai/">Gerenciar Hóspedes</a>
+            {% endif %}
+            <a class="btn btn-primary" href="/ssmai/logout/">Logout</a>
+        {% endif %}
+    </div>
+</body>
+</html>

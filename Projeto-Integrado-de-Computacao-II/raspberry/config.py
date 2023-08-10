@@ -1,0 +1,47 @@
+SYSTEM_PASSWORD = "1234"
+
+OWNER = "carlos@gmail.com"
+
+SECURITY_PASSWORD = "12345678"
+
+HOSTNAME = "10.9.10.17"
+
+TOKEN = '5813859429:AAH1KS33INDbN1LMa2SDALBH53WngdU2aJk'
+
+MAX_DISTANCE = 40
+MIN_DISTANCE = 5
+QNTD_RECOGNIZE = 1
+
+WAITING_TIME = 6
+
+POTHO_PATH = "./unknown_face/photo.jpg"
+
+ROW_PINS = [20, 26, 16, 19]
+COL_PINS = [6, 13, 5]
+KEY_MATRIX = [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+    ['*', '0', '#']
+]
+
+DEBOUNCE_TIME = 0.19
+
+BUTTON_PIN = 2
+
+RED_LED_PIN = 17
+GREEN_LED_PIN = 22
+TIME_BLINK = 1
+
+REED_SENSOR_PIN = 18
+
+GATE = 23
+DELAY_GATE = 2
+
+DELAY_REED = 1
+OPEN_TIME = 2
+
+BUZZER_PIN = 21
+
+TRIG_PIN = 4
+ECHO_PIN = 27

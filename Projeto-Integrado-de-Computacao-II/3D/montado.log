@@ -1,0 +1,34 @@
+Conversão do Solid Edge para obj
+Data: quinta-feira,junho 01,2023 10:03
+Arquivo de saída: C:\Users\mayke\OneDrive\Área de Trabalho\Security-System-Mediated-by-Artificial-Intelligence---SSMAI\3D\montado.obj
+Autor: Desconhecido
+Organização: Desconhecido
+Sistema de origem: SOLID EDGE
+
+Hardware:
+Processador Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz
+Sistema operacional: Windows 10
+Memória Instalada: 15.88 GB
+
+Informações de software:
+Versão do Parasolid: 34.0.153
+Versão do PSBodyshop: 34.0.110
+Versão do Adaptador OBJ: 9.0.94
+Versão do Solid Edge: 222.00.00.132 x64
+
+Opções de Exportação de OBJ:
+Exportar sólidos de construção:Desligado
+Exportar peças exibidas:Desligado
+Exportar Folhas de Construção:Desligado
+Habilitar login:Ligado
+Exportar Texturas:Desligado
+Exportar montagem nivelada:On
+Exportar sólidos de construção e folhas, se os corpos de design não estiverem presentes:Desligado
+Exportar unidades:Millimeters
+Exportar valor de tolerância:1.250000
+Exportar tipo de tolerância:Custom
+Exportar valor do ângulo do plano:0.523599
+
+Progresso da conversão:
+Processo de conversão concluído
+Tempo requerido para converter:00 : 00 : 07
