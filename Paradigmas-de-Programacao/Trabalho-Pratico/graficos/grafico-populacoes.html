@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Países mais populosos do mundo</title>
+<script src="https://cdn.plot.ly/plotly-1.54.1.min.js"></script>
+</head>
+<body>
+<div id="chart"></div>
+<script>
+(function () {
+  var data0 = {"x":["China","India","United States","Indonesia","Pakistan","Brazil","Nigeria","Bangladesh","Russia","Mexico"],"type":"scatter","y":[1.402112E9,1.380004385E9,3.29484123E8,2.73523621E8,2.20892331E8,2.12559409E8,2.06139587E8,1.64689383E8,1.4410408E8,1.28932753E8]};
+
+  var data = [data0];
+  var layout = {"title":"Países mais populosos do mundo"};
+ var config = {};
+
+  Plotly.plot('chart', data, layout, config);
+})();
+</script>
+</body>
+</html>
+       
