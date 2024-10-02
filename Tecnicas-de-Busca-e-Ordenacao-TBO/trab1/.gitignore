@@ -1,0 +1,6 @@
+.vscode
+*.out
+objects
+trab1
+./source/main
+*.zip

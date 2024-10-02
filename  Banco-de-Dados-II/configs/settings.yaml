@@ -1,0 +1,5 @@
+paths:
+  bronze: 'data/bronze'
+  gold: 'data/gold'
+  db: 'db/database.db'
+  usuarios_negociacoes: 'data/usuarios_negociacoes.xlsx'

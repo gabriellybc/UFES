@@ -1,0 +1,9 @@
+pandas==2.2.3
+duckdb==1.1.0
+requests==2.32.3
+pyyaml==6.0.2
+lxml==5.3.0
+pyarrow==17.0.0
+fastparquet==2024.5.0
+openpyxl==3.1.5
+yfinance==0.2.43
